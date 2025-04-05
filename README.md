@@ -84,7 +84,6 @@ flutter run
 
 - Android
 - iOS
-- Web (responsive)
 
 ## 🔐 Authentication
 
@@ -146,29 +145,6 @@ lib/
         ├── country_detail_screen.dart
         └── dashboard_screen.dart
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👏 Acknowledgments
-
-- REST Countries API for providing country data
-- Firebase for authentication and database
-- Flutter community for amazing packages
-- All contributors who have helped this project grow
-
-## 📞 Support
-
-For support, email support@countrydashboard.com or open an issue in the repository.
 
 ## 🎥 Demo
 
