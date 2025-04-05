@@ -12,13 +12,13 @@ import 'views/onboarding/onboarding_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  
+
   // Initialize AuthController before running the app
   final authController = Get.put(AuthController());
-  
+
   // Wait for auth state to be determined
   await Future.delayed(Duration(milliseconds: 500));
-  
+
   runApp(MyApp());
 }
 
@@ -46,11 +46,11 @@ class MyApp extends StatelessWidget {
         if (authController.isFirstTime.value) {
           // return OnboardingScreen();
           return OnboardingScreen();
-        } 
+        }
         // Check if the user is already logged in
         else if (authController.isLoggedIn.value) {
           return DashboardScreen();
-        } 
+        }
         // Otherwise, show the login screen
         else {
           return LoginScreen();

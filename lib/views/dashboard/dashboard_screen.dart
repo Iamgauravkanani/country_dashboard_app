@@ -45,59 +45,63 @@ class DashboardScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-            child: _buildSearchBar(isDarkMode, context),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: _buildSortButton(context),
-          ),
-          SizedBox(height: 8.h),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: Text(
-                    'All Countries',
-                    style: GoogleFonts.poppins(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDarkMode ? AppTheme.darkTextColor : AppTheme.lightTextColor,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+              child: _buildSearchBar(isDarkMode, context),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: _buildSortButton(context),
+            ),
+            SizedBox(height: 8.h),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.4,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Text(
+                      'All Countries',
+                      style: GoogleFonts.poppins(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDarkMode ? AppTheme.darkTextColor : AppTheme.lightTextColor,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 8.h),
-                Expanded(child: _buildCountryList(isDarkMode)),
-              ],
+                  SizedBox(height: 8.h),
+                  Expanded(child: _buildCountryList(isDarkMode)),
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: 8.h),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: Text(
-                    'Custom Countries',
-                    style: GoogleFonts.poppins(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDarkMode ? AppTheme.darkTextColor : AppTheme.lightTextColor,
+            SizedBox(height: 8.h),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.4,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Text(
+                      'Custom Countries',
+                      style: GoogleFonts.poppins(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDarkMode ? AppTheme.darkTextColor : AppTheme.lightTextColor,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 8.h),
-                Expanded(child: _buildCustomCountryList(isDarkMode)),
-              ],
+                  SizedBox(height: 8.h),
+                  Expanded(child: _buildCustomCountryList(isDarkMode)),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

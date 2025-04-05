@@ -125,14 +125,7 @@ class FirestoreController extends GetxController {
       final docRef = await _firestore.collection('custom_countries').add(country.toMap());
       print('Country added with ID: ${docRef.id}');
       
-      // Add to local list immediately
-      customCountries.add(CustomCountry(
-        id: docRef.id,
-        name: country.name,
-        capital: country.capital,
-        region: country.region,
-        population: country.population,
-      ));
+      // Don't add to local list - the stream will update it automatically
       
       Get.snackbar(
         'Success',
